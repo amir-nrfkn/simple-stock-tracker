@@ -10,8 +10,8 @@ class Stock extends React.Component {
             stockChartYValues: []
         };
         
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
 
     }
 
@@ -21,7 +21,7 @@ class Stock extends React.Component {
 
     fetchStock() {
         const pointerToThis = this;
-        const API_KEY = 'I2ZKC0RT1G7EIE5E';
+        const API_KEY = process.env.API_KEY;
         let stockSymbol = this.state.stock;
         let API_CALL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${stockSymbol}&outputsize=compact&apikey=${API_KEY}`;
         let stockChartXValuesFunction = [];
